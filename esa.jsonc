@@ -1,0 +1,17 @@
+{
+  "name": "user-home-landing",
+  "version": "1.0.0",
+  "description": "用户首页宣传落地页 - React + Vite",
+  "build": {
+    "command": "npm run build"
+  },
+  "assets": {
+    "directory": "dist",
+    "notFoundStrategy": "singlePageApplication"
+  },
+  "regions": [
+    "cn-hangzhou"
+  ],
+  "framework": "vite",
+  "customDomains": []
+}
