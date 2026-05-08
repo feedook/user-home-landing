@@ -20,6 +20,7 @@ import {
   RefreshCw,
   Database
 } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 
 // 网盘支持配置 - 未来扩展只需修改 supported 字段
 const cloudStorages = [
@@ -70,7 +71,7 @@ export default function App() {
             <span className="text-lg sm:text-xl text-gray-900">资料盘</span>
           </div>
           <a
-            href="https://tenant.ziliaopan.cn/login"
+            href={siteConfig.tenantLoginUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 sm:px-6 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base"
@@ -95,7 +96,7 @@ export default function App() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
             <a
-              href="https://tenant.ziliaopan.cn/login"
+              href={siteConfig.tenantLoginUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 shadow-lg text-sm sm:text-base"
@@ -663,7 +664,7 @@ export default function App() {
           </p>
           <div className="flex gap-4 justify-center">
             <a
-              href="https://tenant.ziliaopan.cn/login"
+              href={siteConfig.tenantLoginUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 sm:px-10 sm:py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-colors shadow-xl text-sm sm:text-base"
@@ -700,7 +701,7 @@ export default function App() {
                 <span className="text-white text-base sm:text-lg">资料盘</span>
               </div>
               <p className="text-gray-400 text-sm sm:text-base">
-                ziliaopan.cn<br />
+                {siteConfig.domain}<br />
                 虚拟资料站长专属SaaS平台
               </p>
             </div>
@@ -725,13 +726,13 @@ export default function App() {
             <div>
               <h4 className="text-white mb-3 sm:mb-4 text-sm sm:text-base">联系我们</h4>
               <ul className="space-y-2 text-xs sm:text-sm">
-                <li>官方网站：ziliaopan.cn</li>
+                <li>官方网站：{siteConfig.domain}</li>
                 <li>客服时间：7×12小时</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 pt-6 sm:pt-8 text-center text-gray-500 text-xs sm:text-sm">
-            <p>© 2026 资料盘 ziliaopan.cn. 专注独立资料站建设与运营</p>
+            <p>© {new Date().getFullYear()} {siteConfig.siteName} {siteConfig.domain}. 专注独立资料站建设与运营</p>
           </div>
         </div>
       </footer>
