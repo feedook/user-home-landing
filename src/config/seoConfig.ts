@@ -1,4 +1,5 @@
 import { siteConfig, structuredData } from './siteConfig';
+import { sgoEnhanced } from './sgoEnhanced';
 
 // SEO 元数据配置
 export const seoConfig = {
@@ -35,6 +36,12 @@ export function generateMetaTags(): string {
   const og = seoConfig.openGraph;
   const twitter = seoConfig.twitter;
   
+  // 生成增强的 SGO 结构化数据
+  const enhancedFAQ = sgoEnhanced.generateEnhancedFAQ();
+  const enhancedHowTo = sgoEnhanced.generateEnhancedHowTo();
+  const productDesc = sgoEnhanced.generateProductDescription();
+  const websiteDesc = sgoEnhanced.generateWebsiteDescription();
+  
   return `
     <title>${title}</title>
     <meta name="description" content="${description}" />
@@ -70,10 +77,22 @@ export function generateMetaTags(): string {
     <meta name="baidu-site-verification" content="" />
     <meta name="google-site-verification" content="" />
     
-    <!-- 结构化数据 - JSON-LD -->
+    <!-- SGO AI 优化：增强版结构化数据 - JSON-LD -->
     <script type="application/ld+json">${JSON.stringify(structuredData.organization)}</script>
     <script type="application/ld+json">${JSON.stringify(structuredData.webApplication)}</script>
     <script type="application/ld+json">${JSON.stringify(structuredData.faq)}</script>
     <script type="application/ld+json">${JSON.stringify(structuredData.howTo)}</script>
+    
+    <!-- SGO AI 优化：增强版 FAQ（AI搜索引擎重点抓取） -->
+    <script type="application/ld+json">${JSON.stringify(enhancedFAQ)}</script>
+    
+    <!-- SGO AI 优化：增强版 HowTo（AI搜索引擎重点抓取） -->
+    <script type="application/ld+json">${JSON.stringify(enhancedHowTo)}</script>
+    
+    <!-- SGO AI 优化：产品详细描述（AI搜索引擎提取关键信息） -->
+    <script type="application/ld+json">${JSON.stringify(productDesc)}</script>
+    
+    <!-- SGO AI 优化：网站详细描述（AI搜索引擎提取关键信息） -->
+    <script type="application/ld+json">${JSON.stringify(websiteDesc)}</script>
   `.trim();
 }
