@@ -2,8 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ziliaopan.cn/sitemap.xml
-
-Disallow: /api/
-Disallow: /admin/
-Disallow: /auth/
-Disallow: /_vercel/

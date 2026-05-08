@@ -34,7 +34,7 @@ export function generateEnhancedFAQ(): object {
         name: '如何开通资料盘站点？详细步骤是什么？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '开通资料盘站点只需3分钟，具体步骤如下：\n第一步：访问租户登录页面（tenant.ziliaopan.cn/login），使用手机号或邮箱注册账号。\n第二步：选择套餐方案，平台提供免费试用版和多个付费版本，可根据需求选择。\n第三步：进行站点基础配置，设置站点名称、上传Logo、选择配色方案、选择模板。\n第四步：配置完成后，您的专属资源站立即上线，可以开始导入资源和运营。\n整个流程无需购买服务器、无需备案、无需代码知识，真正零门槛。',
+          text: `开通资料盘站点只需3分钟，具体步骤如下：\n第一步：访问租户登录页面（${siteConfig.tenantLoginUrl}），使用手机号或邮箱注册账号。\n第二步：选择套餐方案，平台提供免费试用版和多个付费版本，可根据需求选择。\n第三步：进行站点基础配置，设置站点名称、上传Logo、选择配色方案、选择模板。\n第四步：配置完成后，您的专属资源站立即上线，可以开始导入资源和运营。\n整个流程无需购买服务器、无需备案、无需代码知识，真正零门槛。`,
         },
       },
       {
@@ -126,8 +126,7 @@ export function generateEnhancedHowTo(): object {
       {
         '@type': 'HowToStep',
         name: '注册账号',
-        text: '访问租户登录页面，使用手机号或邮箱注册资料盘账号。注册过程简单快捷，通常1分钟内完成。',
-        image: '/images/howto-step1.png',
+        text: `访问租户登录页面（${siteConfig.tenantLoginUrl}），使用手机号或邮箱注册资料盘账号。注册过程简单快捷，通常1分钟内完成。`,
       },
       {
         '@type': 'HowToStep',
@@ -181,13 +180,6 @@ export function generateProductDescription(): object {
       highPrice: '99',
       priceCurrency: 'CNY',
       availability: 'https://schema.org/InStock',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '2680',
-      bestRating: '5',
-      worstRating: '1',
     },
     featureList: [
       '支持20+主流网盘平台',
