@@ -2,7 +2,7 @@
   "name": "user-home-landing",
   "version": "1.0.0",
   "description": "用户首页宣传落地页 - React + Vite",
-  "install": "npm install",
+  "installCommand": "npm install",
   "build": {
     "command": "npm run build"
   },
